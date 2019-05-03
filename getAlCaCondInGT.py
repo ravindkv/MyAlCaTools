@@ -11,12 +11,15 @@ logFiles.append("output_step1_GEN.log")
 logFiles.append("output_step2_SIM.log")
 logFiles.append("output_step3_DIGI.log")
 logFiles.append("output_step4_L1.log")
-#logFiles.append("output_step5_DIGI2RAW.log")
-#logFiles.append("output_step6_HLT.log")
+logFiles.append("output_step5_DIGI2RAW.log")
+logFiles.append("output_step6_HLT.log")
+logFiles.append("output_step7_AODSIM.log")
+logFiles.append("output_step8_MINIAODSIM.log")
+logFiles.append("output_step9_NANOAODSIM.log")
 
 #output
-tableTitle = "|Tags|GEN|SIM|DIGI|L1|\n"
-#tableTitle = "|Tags|GEN|SIM|DIGI|L1|DIGI2RAW|HLT|\n"
+#tableTitle = "|Tags|GEN|SIM|DIGI|L1|\n"
+tableTitle = "|Tags|GEN|SIM|DIGI|L1|DIGI2RAW|HLT|AOD|MINIAOD|NANOAOD|\n"
 outputForTwiki = open("outputForTwiki.txt", 'w')
 
 def checkTagInFile(tag, logFile):
