@@ -2,13 +2,13 @@
 echo "------------------------------"
 echo "Running step-1/5: L1"
 echo "------------------------------"
-#cmsDriver.py step1  --conditions auto:run2_data_FULL -n 5 --era Run2_2018 -s L1REPACK:Full --data --scenario pp --datatier FEVTDEBUGHLT --eventcontent FEVTDEBUGHLT --filein /store/data/Run2018D/ZeroBias/RAW/v1/000/320/488/00000/B6F6CC00-A893-E811-A1D5-FA163E302B83.root --fileout output_step1_L1.root --customise_commands="process.load('Configuration.StandardSequences.Digi_cff') \n process.GlobalTag.DumpStat =cms.untracked.bool(True)" --outputCommands "keep *" |& tee output_step1_L1.log
+cmsDriver.py step1  --conditions auto:run2_data_FULL -n 5 --era Run2_2018 -s L1REPACK:Full --data --scenario pp --datatier FEVTDEBUGHLT --eventcontent FEVTDEBUGHLT --filein /store/data/Run2018D/ZeroBias/RAW/v1/000/320/488/00000/B6F6CC00-A893-E811-A1D5-FA163E302B83.root --fileout output_step1_L1.root --customise_commands="process.load('Configuration.StandardSequences.Digi_cff') \n process.GlobalTag.DumpStat =cms.untracked.bool(True)" --outputCommands "keep *" |& tee output_step1_L1.log
 
 #2: HLT
 echo "------------------------------"
 echo "Running step-2/5: HLT"
 echo "------------------------------"
-#cmsDriver.py step2  --conditions auto:run2_data_FULL -n 5 --era Run2_2018 -s HLT --processName HLT2 --data --scenario pp --datatier FEVTDEBUGHLT --eventcontent FEVTDEBUGHLT --filein file:output_step1_L1.root --fileout output_step2_HLT.root --customise_commands='process.GlobalTag.DumpStat=cms.untracked.bool(True)' --outputCommands "keep *" |& tee output_step2_HLT.log
+cmsDriver.py step2  --conditions auto:run2_data_FULL -n 5 --era Run2_2018 -s HLT --processName HLT2 --data --scenario pp --datatier FEVTDEBUGHLT --eventcontent FEVTDEBUGHLT --filein file:output_step1_L1.root --fileout output_step2_HLT.root --customise_commands='process.GlobalTag.DumpStat=cms.untracked.bool(True)' --outputCommands "keep *" |& tee output_step2_HLT.log
 
 #3 AOD (RAW2DIGI,L1Reco,RECO,EI)
 echo "------------------------------"
